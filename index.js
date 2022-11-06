@@ -3,7 +3,7 @@ const app = express()
 const mongoose = require('mongoose')
 app.use(express.json())
 const userRouter = require('./routes/user')
-
+const port = process.env.PORT || 8000;
 var cors = require('cors')
 const todoRouter = require('./routes/todo')
 
@@ -23,4 +23,6 @@ app.use('/', todoRouter)
 app.get('*', (req, res) => {
     res.status(404).send('page not found')
 })
-app.listen(8000 || process.env.PORT, () => { console.log("server listening") })
+
+app.listen(port
+    ,()=>console.log('server started successully'))
