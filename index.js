@@ -23,4 +23,4 @@ app.use('/', todoRouter)
 app.get('*', (req, res) => {
     res.status(404).send('page not found')
 })
-app.listen(port || process.env.port, () => { console.log("server listening") })
+app.listen(port || process.env.PORT, () => { console.log("server listening") })
